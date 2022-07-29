@@ -1,0 +1,22 @@
+body{
+    --primaire : #FD2D01;
+    --secondaire : #FFD7D7;
+    --tertiaire : #4E5166;
+}
+.footer{
+    background-color: var(--primaire);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 50px;
+    height: 100px;
+    
+}
+.liens{
+    text-align: center;
+}
+.liens a{
+    margin: 20px;
+    color: var(--tertiaire);
+
+}

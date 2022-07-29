@@ -1,0 +1,85 @@
+body{
+    --primaire : #FD2D01;
+    --secondaire : #FFD7D7;
+    --tertiaire : #4E5166;
+}
+
+.auth {
+    border: 5px solid var(--primaire);
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 25%;
+    padding: 10px;
+    width: 50%;
+    border-radius: 15px;
+    box-shadow: 12px 17px 15px 2px var(--primaire);
+}
+
+.auth h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color : var(--tertiaire);
+}
+
+.inputEmail {
+    margin : 10px;
+}
+
+.inputEmail input {
+    border : solid 2px var(--primaire);
+    border-radius: 15px;
+    width: 200px;
+    height: 30px;
+    margin : 10px;
+    padding : 1px;
+}
+
+.inputEmail label {
+    display: block;
+    font-weight: bold;
+    color : var(--tertiaire);
+}
+
+
+.inputPassword input{
+    border : solid 2px var(--primaire);
+    border-radius: 15px;
+    width: 200px;
+    height: 30px;
+    margin : 10px;
+    font : inherit;
+}
+
+.inputPassword label {
+    display: block;
+    font-weight: bold;
+    color : var(--tertiaire);
+}
+
+.bouton button {
+    border : solid;
+    width: 150px;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 15px;
+    color : var(--tertiaire);
+    cursor : pointer;
+}
+.bouton button:hover{
+    color : var(--primaire);
+}
+
+.boutonRetour {
+    margin-left: 50px;
+}
+
+.logo {
+    display: flex;
+    margin-left: 32%;
+    height: 300px;
+    width: 500px;
+}
+
+form {
+    margin-bottom: 50px;
+}

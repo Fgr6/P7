@@ -1,0 +1,55 @@
+body{
+    --primaire : #FD2D01;
+    --secondaire : #FFD7D7;
+    --tertiaire : #4E5166;
+}
+
+.titre{
+    margin-top: -100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    color: var(--tertiaire);
+}
+
+.bouton{
+    margin-left: 25%;
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+}
+
+.boutonCo{
+    border : solid;
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    color : var(--tertiaire);
+    cursor : pointer;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.boutonCo:hover {
+    color : var(--primaire);
+}
+
+.boutonInsc{
+    border : solid;
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    color : var(--tertiaire);
+    cursor : pointer;
+    font-weight: bold;
+}
+
+.boutonInsc:hover{
+    color : var(--primaire);
+}
+.logo {
+    display: flex;
+    margin-left: 37%;
+    height: 500px;
+    width: 700px;
+}

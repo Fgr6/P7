@@ -1,0 +1,23 @@
+body{
+    --primaire : #FD2D01;
+    --secondaire : #FFD7D7;
+    --tertiaire : #4E5166;
+}
+
+.form {
+    position: absolute;
+    margin-top: 200px;
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 15px;
+    box-shadow: 12px 17px 15px 2px var(--primaire);
+    border: 2px solid var(--primaire);
+}
+
+h1{
+    color: var(--tertiaire);
+    margin : 25px;
+    font-weight: bold;
+}
+
