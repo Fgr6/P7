@@ -2,6 +2,7 @@ import classes from '../styles/AuthForm.module.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
 import logo from '../assets/logo.png'
+import axios from 'axios';
 
 
 function Login() {
@@ -9,31 +10,29 @@ function Login() {
     const passwordInputRef = useRef();
 
     let navigate = useNavigate()
+
     const handleSubmit = (event) => {
         event.preventDefault()
 
         const valueEmail = emailInputRef.current.value;
         const valuePassword = passwordInputRef.current.value;
-        
-        if(valueEmail.trim().length === 0 || valuePassword.trim().length === 0){
-            return
-        }
-        
-        const regExEmail = (value) => {
-            // eslint-disable-next-line
-            return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value);
-        }
 
-        if(!regExEmail(valueEmail)){
-            return;
+        const userLogin = {
+            email: valueEmail,
+            password: valuePassword,
         }
+        axios.post("http://localhost:5000/api/auth/login", userLogin)
+        .then((res) => {
+            const userId = res.data.userId;
+            console.log(userId)
+            localStorage.setItem("id", userId)
+            navigate("/Actu")
+        })
+        .catch((error) => {
+            console.log('Erreur')
+        })
         
-        navigate('/Actu')
-        console.log(valueEmail, valuePassword)
-        emailInputRef.current.value = ""
-        passwordInputRef.current.value = ""
-    }
-    
+}
     
     return (
         <div>

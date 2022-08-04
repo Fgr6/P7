@@ -1,26 +1,45 @@
-const express = require('express')
-require('dotenv').config()
+const http = require('http');
+const app = require('./app.js');
 
-const path = require('path')
+const normalizePort = val => {
+  const port = parseInt(val, 10);
 
-const PORT = process.env.PORT
+  if (isNaN(port)) {
+    return val;
+  }
+  if (port >= 0) {
+    return port;
+  }
+  return false;
+};
+const port = normalizePort(process.env.PORT || '5000');
+app.set('port', port);
 
-const app = express()
+const errorHandler = error => {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+  const address = server.address();
+  const bind = typeof address === 'string' ? 'pipe ' + address : 'port: ' + port;
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges.');
+      process.exit(1);
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use.');
+      process.exit(1);
+    default:
+      throw error;
+  }
+};
 
-app.use(express.json())
+const server = http.createServer(app);
 
-app.use(express.static('../frontend/build'))
+server.on('error', errorHandler);
+server.on('listening', () => {
+  const address = server.address();
+  const bind = typeof address === 'string' ? 'pipe ' + address : 'port ' + port;
+  console.log('Listening on ' + bind);
+});
 
-app.get('/api/test', (_, res) => {
-    res.send({
-        msg: 'Hello test'
-    })
-})
-
-app.get('/*', (_, res) =>{
-    res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
-})
-
-app.listen(5000, () => {
-    console.log(`Port : ${PORT}`)
-})
+server.listen(port);

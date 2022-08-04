@@ -2,42 +2,35 @@ import classes from '../styles/AuthForm.module.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
 import logo from '../assets/logo.png'
-
+import axios from 'axios'
 
 function Insc() {
     const emailInputRef = useRef();
     const passwordInputRef = useRef();
 
     let navigate = useNavigate()
+    
     const handleSubmit = (event) => {
         event.preventDefault()
 
         const valueEmail = emailInputRef.current.value;
         const valuePassword = passwordInputRef.current.value;
-        console.log(valueEmail, valuePassword)
 
-
-        if(valueEmail.trim().length === 0 || valuePassword.trim().length === 0){
-            return
+        const newUser = {
+            email: valueEmail,
+            password: valuePassword,
         }
-        
-        const regExEmail = (value) => {
-            // eslint-disable-next-line
-            return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value);
-        }
-
-        if(!regExEmail(valueEmail)){
-            return;
-        }
-        
-        navigate('/Actu')
-        console.log(valueEmail, valuePassword)
-        emailInputRef.current.value = ""
-        passwordInputRef.current.value = ""
+        axios.post("http://localhost:5000/api/auth/signup", newUser)
+        .then((res) => {
+            console.log(res);
+            navigate('/login')
+        })
+        .catch((error) => {
+            this.error = error.response.data;
+            console.log('Erreur');
+        })
     }
-
-
-    return (
+     return (
         <div>
         <section className={classes.auth}>
         <div className={classes.logo}>
@@ -55,7 +48,7 @@ function Insc() {
                 <input type="password" id="password"  ref={passwordInputRef} required/>
             </div>
             <div className={classes.bouton}>
-            <button type="submit" onClick={() => {}}>Se connecter</button>
+            <button type="submit" onClick={() => {}}>S'inscrire</button>
             <Link to="/">
             <button className={classes.boutonRetour}>Retour</button>
             </Link>

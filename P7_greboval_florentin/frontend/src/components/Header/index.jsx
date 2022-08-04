@@ -1,21 +1,35 @@
 
 import classes from '../../styles/Header.module.css'
 import logoHeader from '../../assets/logoHeader.svg'
-import { Link } from 'react-router-dom'
+import logoMenu from '../../assets/burger-bar.png'
+
 
 function Header() {
+    function handleClick(e) {
+        const navLinks = document.querySelector(`.${classes.navLinks}`)
+        if(navLinks.style.marginLeft === "-100%"){
+            navLinks.style.marginLeft = "0px"
+        } else {
+            navLinks.style.marginLeft = "-100%"
+        }
+        
+    }
+    function handleLogout(e) {
+        localStorage.removeItem("id")
+    }
     return (
         <div>
             <section className={classes.header}>
-                <img src={logoHeader} alt="Groupomania" className={classes.logoHeader} />
-                <div className={classes.boutonHeader}>
-                    <Link to ="/ActuForm">
-                    <button type='button'className={classes.publication}>Nouvelle publication</button>
-                    </Link>
-                    <Link to ="/">
-                    <button type='button'className={classes.logout}>Déconnexion</button>
-                    </Link>
-                </div>
+                <nav className={classes.boutonHeader}>
+                    <a href="/"><img src={logoHeader} alt="Groupomania" className={classes.logoHeader} /></a>
+                    <div className={classes.navLinks}>
+                        <ul>
+                            <li><a href="/ActuForm" className={classes.publication}>Nouvelle publication</a></li>
+                            <li><a href="/" className={classes.logout} onClick={handleLogout}>Déconnexion</a></li> 
+                        </ul>
+                    </div>
+                    <img src={logoMenu} alt="Menu hamburger" className={classes.menuHamb} onClick={handleClick}/>
+                </nav>
             </section>
         </div>
     )

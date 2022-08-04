@@ -3,48 +3,148 @@ body{
     --secondaire : #FFD7D7;
     --tertiaire : #4E5166;
 }
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
 .header{
-    position: absolute;
-    margin-top: 0;
-    height: 150px;
+    position: fixed;
+    top: 0;
+    height: 50px;
     width: 100%;
     background-color: var(--primaire);
 }
 
-.logoHeader{
-    display: flex;
-    margin: auto;
-    padding: 10px;
-    width: 300px;
-    height: 165px;
-}
-
 .boutonHeader {
-    width: 25%;
+    position: absolute;
     display: flex;
-    margin-top: -130px;
-    margin-left: 75%;
-    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
-
-.publication{
-    margin: 15px;
-    background-color: var(--secondaire);
+.boutonHeader a{
     color: var(--tertiaire);
-    border-color: var(--tertiaire);
-    border-radius: 15px;
-    padding: 10px;
-    cursor : pointer;
-    font-weight: bold;
 }
 
+ul {
+    display: flex;
+}
+li {
+    margin: 0 25px;
+}
+
+.menuHamb{
+    width: 35px;
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 20px;
+}
+.publication {
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    margin-top : 20px;
+    margin-right: 2px;
+
+}
+.publication:hover {
+    border-bottom : solid 3px;
+    transition: all 0.2s linear;
+    border-color: var(--tertiaire);
+}
+.navLinks{
+    height: 50px;
+    margin-top: -5px;
+}
 .logout {
-    margin: 15px;
-    background-color: var(--secondaire);
-    color: var(--tertiaire);
-    border-color: var(--tertiaire);
-    border-radius: 15px;
-    padding: 10px;
-    cursor : pointer;
+    font-size: 15px;
     font-weight: bold;
+    display: flex;
+    margin-top : 20px;
+    margin-right: 15px;
+}
+.logout:hover {
+    border-bottom : solid 3px;
+    transition: all 0.2s linear;
+    border-color: var(--tertiaire);
+}
+.logoHeader {
+    width: 50%;
+    margin-left: 15px;
+    height: 50px;
+}
+
+
+
+@media screen and (max-width : 900px) {
+    .boutonHeader {
+        padding: 0;
+        height: 100%;
+    }
+    .navLinks {
+        position: absolute;
+        background-color:#ffd7d7d5;
+        backdrop-filter: blur(7px);
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s linear;
+    } 
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    li {
+        margin: 25px 0;
+        padding: 3px;
+    }
+    .menuHamb {
+        display: block;
+        top : 10px;
+    }
+    .header{
+        height: 50px;
+    }
+    .logoHeader {
+        width: 55%;
+        margin-left: 5px;
+    }
+    .publication {
+        font-size: 25px;
+        font-weight: bold;
+        padding: 15px;
+        margin : 0px;
+        border : groove 5px;
+        border-radius: 50px;
+    }
+    .publication:hover {
+        border : groove 5px;
+        border-radius: 0px;
+        transition: all 0.2s linear;
+        border-color: var(--tertiaire);
+    }
+    .logout {
+        font-size: 25px;
+        font-weight: bold;
+        padding: 15px;
+        margin : 0px;
+        border : groove 5px;
+        border-radius: 50px;
+    }
+    .logout:hover {
+        border : groove 5px;
+        border-radius: 0px;
+        transition: all 0.2s linear;
+        border-color: var(--tertiaire);
+    }
 }

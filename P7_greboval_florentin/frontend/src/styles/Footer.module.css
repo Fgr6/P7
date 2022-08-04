@@ -5,18 +5,36 @@ body{
 }
 .footer{
     background-color: var(--primaire);
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
-    padding-top: 50px;
-    height: 100px;
-    
+    padding-top: 15px;
+    height: 50px;
 }
 .liens{
     text-align: center;
+    position: relative;
 }
 .liens a{
     margin: 20px;
     color: var(--tertiaire);
 
+}
+@media screen and (max-width : 320px) {
+    .liens a{
+        margin: 5px;
+    }
+    .footer{
+        height: 30px;
+        padding-top: 5px;
+    }
+}
+@media screen and (min-width : 321px) and (max-width : 415px) {
+    .liens a{
+        margin: 10px;
+    }
+    .footer{
+        height: 35px;
+        padding-top: 5px;
+    }
 }

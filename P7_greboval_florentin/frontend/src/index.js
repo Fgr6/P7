@@ -5,12 +5,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/index'
 import Login from './pages/login'
 import Insc from './pages/insc'
-import Footer from './components/Footer/footer'
 import Actu from './pages/Actu'
 import ActuForm from './pages/ActuForm'
+import Footer from './components/Footer/footer'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
+
 
 
 root.render(

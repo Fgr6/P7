@@ -1,0 +1,248 @@
+body{
+    --primaire : #FD2D01;
+    --secondaire : #FFD7D7;
+    
+    --tertiaire : #4E5166;
+}
+.actu {
+    display: flex;
+    margin-top: 50px;
+    width: 100vw;
+    height: 100vh;
+}
+.listePubli{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 86vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.publication{
+    border: solid;
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    border: solid 3px var(--primaire);
+    box-shadow: 12px 17px 15px 2px var(--primaire);
+    text-align: center;
+}
+.titrePubli p{
+    height: 40px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: var(--tertiaire);
+}
+.textPubli p{
+    border: solid 2px var(--primaire);
+    border-radius: 15px;
+    background-color: #fff;
+    min-height: 25px;
+    max-height: auto;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+}
+.imgPubli img {
+    max-width: 30%;
+    max-height: 30%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+.like{
+    height: 100px;
+    text-align: center;
+}
+.like button {
+    border : solid;
+    width: 50px;
+    color: var(--primaire);
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.like button:hover{
+    background-color: var(--secondaire);
+}
+.like p{
+    color: var(--tertiaire);
+    font-weight: bold;
+}
+.boutonModif {
+    display: flex;
+    height: 40px;
+    width: 50%;
+    margin-left: 25%;
+}
+.modif {
+    color : var(--tertiaire);
+    background-color: var(--secondaire);
+    margin-bottom: 10px;
+    margin-left: 25%;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 50px;
+    border: solid 1px var(--primaire);
+    cursor: pointer;
+}
+.modif:hover {
+   border: solid 2px var(--primaire);
+   transition: all 0.2s linear;
+}
+.delete {
+    color : var(--tertiaire);
+    background-color: var(--secondaire);
+    margin-bottom: 10px;
+    margin-left: 50px;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 50px;
+    border: solid 1px var(--primaire);
+    cursor: pointer;
+}
+.delete:hover {
+    border: solid 2px var(--primaire);
+    transition: all 0.2s linear;
+}
+@media screen and (max-width : 320px) {
+  .publication {
+    width: 90%;
+    margin-left: 5%;
+  }
+  .imgPubli img {
+    max-width: 60%;
+    max-height: 50%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    }
+    .like{
+        height: 100px;
+        display: flex;
+        margin-left: 50%;
+        width: 50%;
+    }
+    .like button {
+        border : solid;
+        width: 50px;
+        height: 50px;
+        color: var(--primaire);
+        border-radius: 20px;
+        padding: 10px;
+        margin-left: 25%;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    .like p{
+        color: var(--tertiaire);
+        font-weight: bold;
+        width: 20%;
+        margin-top: 25%;
+        margin-left: 10px;
+    }
+    .boutonModif {
+        width: 50%;
+        height: 100px;
+        margin-left: 0px;
+        margin-top: -90px;
+        display: flex;
+        flex-direction: column;
+    }
+    .modif {
+        margin-left: 10px;
+        margin-bottom: 15px;
+        border-radius: 0px;
+        border: solid 2px var(--primaire);
+    }
+    .modif:hover {
+        border: solid 2px var(--primaire);
+        border-radius: 50px;
+        transition: all 0.2s linear;
+     }
+    .delete {
+        margin-left: 10px;
+        margin-bottom: 0px;
+        border-radius: 0px;
+        border: solid 2px var(--primaire);
+    }
+    .delete:hover {
+        border: solid 2px var(--primaire);
+        border-radius: 50px;
+        transition: all 0.2s linear;
+    }
+}
+@media screen and (min-width : 321px) and (max-width : 413px) {
+    .listePubli {
+        height: 90vh;
+    }
+    .publication {
+        width: 90%;
+        margin-left: 5%;
+      }
+      .imgPubli img {
+        max-width: 60%;
+        max-height: 50%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        }
+        .like{
+            height: 100px;
+            display: flex;
+            margin-left: 50%;
+            width: 50%;
+        }
+        .like button {
+            border : solid;
+            width: 50px;
+            height: 50px;
+            color: var(--primaire);
+            border-radius: 20px;
+            padding: 10px;
+            margin-left: 25%;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .like p{
+            color: var(--tertiaire);
+            font-weight: bold;
+            width: 20%;
+            margin-top: 25%;
+            margin-left: 10px;
+        }
+        .boutonModif {
+            width: 50%;
+            height: 100px;
+            margin-left: 0px;
+            margin-top: -90px;
+            display: flex;
+            flex-direction: column;
+        }
+        .modif {
+            margin-left: 10px;
+            margin-bottom: 15px;
+            border-radius: 0px;
+            border: solid 2px var(--primaire);
+        }
+        .modif:hover {
+            border: solid 2px var(--primaire);
+            border-radius: 50px;
+            transition: all 0.2s linear;
+         }
+        .delete {
+            margin-left: 10px;
+            margin-bottom: 0px;
+            border-radius: 0px;
+            border: solid 2px var(--primaire);
+        }
+        .delete:hover {
+            border: solid 2px var(--primaire);
+            border-radius: 50px;
+            transition: all 0.2s linear;
+        }
+}

@@ -8,7 +8,7 @@ function Footer() {
     <div className={classes.liens}>
             <a href="/#">Contact</a>
             <a href="/#">Plan du site</a>
-            <a href="/#">Le groupe Groupomania</a>
+            <a href="/#">Groupomania</a>
     </div>
     </section>
     </div>
