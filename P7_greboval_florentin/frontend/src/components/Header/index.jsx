@@ -16,6 +16,7 @@ function Header() {
     }
     function handleLogout(e) {
         localStorage.removeItem("id")
+        localStorage.removeItem("token")
     }
     return (
         <div>

@@ -8,6 +8,7 @@ import Insc from './pages/insc'
 import Actu from './pages/Actu'
 import ActuForm from './pages/ActuForm'
 import Footer from './components/Footer/footer'
+import ModifForm from './pages/ModifForm'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
@@ -23,6 +24,7 @@ root.render(
       <Route path="/Insc" element={<Insc />} />
       <Route path="/Actu" element={<Actu />} />
       <Route path="ActuForm" element={<ActuForm />} />
+      <Route path="ModifForm" element={<ModifForm />} />
       </Routes>
       <Footer />
     </BrowserRouter>

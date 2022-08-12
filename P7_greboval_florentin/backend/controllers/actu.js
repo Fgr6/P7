@@ -3,12 +3,12 @@ const Actu = require('../models/Actu');
 
 
 exports.createActu =  (req, res, next) => {
-    const actuObject = JSON.parse(req.body.actu);
-    delete actuObject._id;
-    delete actuObject._userId;
+    const actuObject = req.body.actu;
     const actu = new Actu({
         ...actuObject,
-        userId: req.auth.userId,
+        titre: req.body.titre,
+        message: req.body.message,
+        userId: req.auth.userId, 
         imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
         likes: 0
     });
@@ -17,7 +17,7 @@ exports.createActu =  (req, res, next) => {
       .catch(error => res.status(400).json({ error }));
 };
 
-  exports.listeActu = (req, res, next) => {
+exports.listeActu = (req, res, next) => {
     Actu.find()
       .then(actu => res.status(200).json(actu))
       .catch(error => res.status(400).json({ error }));

@@ -3,6 +3,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const app = express();
 const userRoutes = require('./routes/user');
+const actuRoutes = require('./routes/actu');
 require('dotenv').config();
 const url = process.env.REACT_APP_URL;
 app.use((req, res, next) => {
@@ -25,6 +26,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 app.use('/api/auth', userRoutes);
+app.use('/api/actu', actuRoutes);
 
 
 module.exports = app;

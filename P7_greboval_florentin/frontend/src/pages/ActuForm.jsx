@@ -1,6 +1,9 @@
 import Header from '../components/Header/index'
 import classes from '../styles/ActuForm.module.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useRef } from 'react'
+import axios from 'axios'
+
 
 function ActuForm() {
   function previewFile() {
@@ -17,30 +20,66 @@ function ActuForm() {
     }
 
   }
+  const titreInputRef = useRef()
+  const textInputRef = useRef()
+  const imgInputRef = useRef()
+
+  let navigate = useNavigate()
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    
+    const valueTitre = titreInputRef.current.value
+    const valueText = textInputRef.current.value
+    const image = document.querySelector('input[type=file]').files[0]
+    const token = localStorage.getItem("token")
+    const userId = localStorage.getItem("id")
+
+
+    const actu = {
+      userId: userId,
+      titre: valueTitre,
+      message: valueText,
+      image: image,
+    }
+     
+   axios({
+    method: 'POST',
+    url: 'http://localhost:5000/api/actu',
+    data: actu,
+    headers: {'Content-type': 'multipart/form-data', 'Authorization' : 'Bearer ' + token}
+   })
+    .then((res) => {
+      console.log(res)
+      navigate("/Actu")
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+  }
     return(
       <div>
         <section className={classes.actu}>
         <Header />
         <div className={classes.form}>
             <h1>Nouvelle publication</h1>
-            <form onSubmit={() => {}}>
+            <form onSubmit={handleSubmit}>
             <div className={classes.inputTitre}>
                 <label htmlFor="titre">Titre :</label>
-                <input type="text" id="titre"  required/>
+                <input type="text" id="titre"  ref={titreInputRef} required/>
             </div>
 
             <div className={classes.inputTexte}>
                 <label htmlFor="texte">Que voulez-vous raconter ?</label>
-                <textarea id="texte" />
+                <textarea id="texte" ref={textInputRef} />
             </div>
             <div className={classes.inputImage}>
-                <input type="file"  accept='image/*' onChange={previewFile}/>
-                <img src="https://cdn-icons-png.flaticon.com/512/48/48639.png" height={200} alt="" className='imgForm'/>
+                <input type="file"  accept='image/*' onChange={previewFile} />
+                <img src="https://cdn-icons-png.flaticon.com/512/48/48639.png" height={200} alt="" className='imgForm' ref={imgInputRef} />
             </div>
             <div className={classes.bouton}>
-            <Link to="/Actu">
             <button type="submit" onClick={() => {}}>Publier</button>
-            </Link>
             <Link to="/Actu">
             <button className={classes.boutonRetour}>Retour</button>
             </Link>

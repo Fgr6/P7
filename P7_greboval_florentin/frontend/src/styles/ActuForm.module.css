@@ -8,10 +8,10 @@ body{
 .form {
     position: absolute;
     display: block;
-    top: 200px;
+    top: 75px;
     text-align: center;
     width: 50%;
-    height: auto;
+    height: 75vh;
     margin-left: 25%;
     bottom: 150px;
     border-radius: 15px;
@@ -77,13 +77,10 @@ h1{
 }
 .inputImage img{
     border-radius: 15px;
-    width: 150px;
-    height: 150px;
-    margin-left: 267px;
+    width: 25%;
+    height: 50%;
+    margin-left: 38%;
     margin-top: 15px; 
-}
-.bouton {
-    margin-top: 20px;
 }
 .bouton button{
     background-color: #fff;
