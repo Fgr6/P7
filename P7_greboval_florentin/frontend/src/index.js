@@ -24,7 +24,7 @@ root.render(
       <Route path="/Insc" element={<Insc />} />
       <Route path="/Actu" element={<Actu />} />
       <Route path="ActuForm" element={<ActuForm />} />
-      <Route path="ModifForm" element={<ModifForm />} />
+      <Route path="ModifForm/:id" element={<ModifForm />} />
       </Routes>
       <Footer />
     </BrowserRouter>

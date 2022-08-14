@@ -100,3 +100,210 @@ h1{
     background-color: var(--primaire);
     color: var(--tertiaire);
 }
+@media screen and (max-width : 320px) {
+    body{
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .form {
+        position: absolute;
+        display: block;
+        top: 60px;
+        text-align: center;
+        width: 90%;
+        height: 80vh;
+        margin-left: 5%;
+        bottom: 150px;
+        border-radius: 15px;
+        box-shadow: 12px 17px 15px 2px var(--primaire);
+        border: 2px solid var(--primaire);
+    }
+    .inputTexte textarea {
+        height: 50px;
+    }
+    .inputTitre input {
+        height: 10px;
+    }
+    .inputImage{
+        height: 160px;
+    }
+    .inputImage input[type=file]{
+    margin-left: 25%;
+    padding-left: 5px;
+    height: 50px;
+    width: 50%;
+    font-size: 15px;
+    }
+    .bouton button{
+        width: 70px;
+    }
+}
+@media screen and (min-width : 321px) and (max-width : 413px) {
+    body{
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .form {
+        position: absolute;
+        display: block;
+        top: 60px;
+        text-align: center;
+        width: 90%;
+        height: 80vh;
+        margin-left: 5%;
+        bottom: 150px;
+        border-radius: 15px;
+        box-shadow: 12px 17px 15px 2px var(--primaire);
+        border: 2px solid var(--primaire);
+    }
+    .inputTexte textarea {
+        height: 100px;
+    }
+    .inputTitre input {
+        height: 10px;
+    }
+    .inputImage{
+        height: 225px;
+    }
+    .inputImage input[type=file]{
+    margin-left: 25%;
+    padding-left: 5px;
+    height: 50px;
+    width: 50%;
+    font-size: 15px;
+    }
+    .inputImage img{
+        width: 50%;
+        margin-left: 25%;
+    }
+    .bouton button{
+        width: 70px;
+    }
+
+}
+@media screen and (min-width : 414px) and (max-width : 599px){
+    body{
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .form {
+        position: absolute;
+        display: block;
+        top: 60px;
+        text-align: center;
+        width: 90%;
+        height: 80vh;
+        margin-left: 5%;
+        bottom: 150px;
+        border-radius: 15px;
+        box-shadow: 12px 17px 15px 2px var(--primaire);
+        border: 2px solid var(--primaire);
+    }
+    .inputTexte textarea {
+        height: 100px;
+    }
+    .inputTitre input {
+        height: 10px;
+    }
+    .inputImage{
+        height: 290px;
+    }
+    .inputImage input[type=file]{
+    margin-left: 25%;
+    padding-left: 5px;
+    height: 50px;
+    width: 50%;
+    font-size: 15px;
+    }
+    .inputImage img{
+        width: 50%;
+        margin-left: 25%;
+    }
+    .bouton button{
+        width: 70px;
+    }
+}
+@media screen and (min-width : 600px) and (max-width : 767px){
+    body{
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .form {
+        position: absolute;
+        display: block;
+        top: 60px;
+        text-align: center;
+        width: 90%;
+        height: 80vh;
+        margin-left: 5%;
+        bottom: 150px;
+        border-radius: 15px;
+        box-shadow: 12px 17px 15px 2px var(--primaire);
+        border: 2px solid var(--primaire);
+    }
+    .inputTexte textarea {
+        height: 100px;
+    }
+    .inputTitre input {
+        height: 10px;
+    }
+    .inputImage{
+        height: 290px;
+    }
+    .inputImage input[type=file]{
+    margin-left: 25%;
+    padding-left: 5px;
+    height: 50px;
+    width: 50%;
+    font-size: 15px;
+    }
+    .inputImage img{
+        width: 50%;
+        margin-left: 25%;
+    }
+    .bouton button{
+        width: 70px;
+    }
+}
+@media screen and (min-width : 768px) and (max-width : 1023px){
+    body{
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .form {
+        position: absolute;
+        display: block;
+        top: 60px;
+        text-align: center;
+        width: 90%;
+        height: 80vh;
+        margin-left: 5%;
+        bottom: 150px;
+        border-radius: 15px;
+        box-shadow: 12px 17px 15px 2px var(--primaire);
+        border: 2px solid var(--primaire);
+    }
+    .inputTexte textarea {
+        height: 100px;
+    }
+    .inputTitre input {
+        height: 10px;
+    }
+    .inputImage{
+        height: 500px;
+    }
+    .inputImage input[type=file]{
+    margin-left: 25%;
+    padding-left: 5px;
+    height: 50px;
+    width: 50%;
+    font-size: 15px;
+    }
+    .inputImage img{
+        width: 50%;
+        margin-left: 25%;
+    }
+    .bouton button{
+        width: 70px;
+    }
+}

@@ -2,7 +2,8 @@ import React from "react"
 
 
 
-const Contenu = () => {
+const Contenu = (props) => {
+    console.log(props.setData)
     return (
         <div>
             BONJOUR

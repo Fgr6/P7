@@ -13,6 +13,9 @@ router.get('/', auth,  actuCtrl.listeActu );
 /*Modifier l'actu*/
 router.put('/:id', auth, multer, actuCtrl.modifyActu);
 
+/*Affichage de l'actu sellectionné via l'id*/
+router.get('/:id', auth, actuCtrl.uneActu);
+
 /*Supprimer une actu*/
 router.delete('/:id', auth, actuCtrl.suppActu);
 
