@@ -23,10 +23,10 @@ function Login() {
         }
         axios.post("http://localhost:5000/api/auth/login", userLogin)
         .then((res) => {
-            const userId = res.data.userId;
-            const token = res.data.token;
-            console.log(userId)
-            console.log(token)
+            const userId = res.data.userId
+            const token = res.data.token
+            const role = res.data.roles
+            localStorage.setItem("role", role)
             localStorage.setItem("id", userId)
             localStorage.setItem("token", token)
             navigate("/Actu")

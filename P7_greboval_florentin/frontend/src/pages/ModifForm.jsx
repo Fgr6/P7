@@ -40,7 +40,6 @@ function ModifForm() {
   // eslint-disable-next-line
   },[])
 
-  console.log(data.titre)
   useEffect(() => {
     const titrePost = document.getElementById('titre')
     titrePost.value = data.titre
@@ -71,8 +70,6 @@ function ModifForm() {
     .then((res) => console.log(res.data))
     .catch((error) => console.log(error.response))
    
-
-
     navigate('/Actu')
 
   }

@@ -2,7 +2,7 @@
 import Header from '../components/Header/index'
 import classes from '../styles/Actu.module.css'
 import iconLike from '../assets/iconLike.svg'
-import { useNavigate} from 'react-router-dom'
+import { useNavigate, useParams} from 'react-router-dom'
 import { useEffect, useState} from 'react'
 import axios from 'axios'
 import React from 'react'
@@ -13,6 +13,7 @@ import React from 'react'
 function Actu() {
 const verifId = localStorage.getItem("id")
 const token = localStorage.getItem("token")
+const role = useParams()
 let navigate = useNavigate()
 
 useEffect(() => {
@@ -36,18 +37,17 @@ useEffect(() => {
     // eslint-disable-next-line
 },[])
 useEffect(() => {
-  
   for(let i = 0; i < data.length; i++){
-  if(verifId  === data[i].userId){
+  if(verifId  === data[i].userId | role.roles === "1"){
     const bouton = document.querySelectorAll(`.${classes.boutonModif}`)
     bouton[i].style.display = "block"
   }else{
     const bouton = document.querySelectorAll(`.${classes.boutonModif}`)
     bouton[i].style.display = "none"
   }
-
 }
 })
+
 
 const handleClick = (e)  => {
   const el = e.target.closest('article')

@@ -40,13 +40,9 @@ exports.modifyActu = (req, res, next) => {
             if (actu.userId != req.auth.userId) {
                 res.status(401).json({ message : 'Non authorizé'});
             } else {
-                const nomFichier = actu.imageUrl.split('images')[1];
-                fs.unlink(`images/${nomFichier}`, ()=> {
                 Actu.updateOne({ _id: req.params.id}, { ...actuObject, _id: req.params.id})
                 .then(() => res.status(200).json({message : 'Objet modifié!'}))
                 .catch(error => res.status(401).json({ error }));
-                })
-                
             }
         })
         .catch((error) => {

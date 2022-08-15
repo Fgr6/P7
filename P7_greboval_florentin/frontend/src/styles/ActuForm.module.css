@@ -5,15 +5,16 @@ body{
     --tertiaire : #4E5166;
 }
 
+
 .form {
-    position: absolute;
-    display: block;
-    top: 75px;
+    display: flex;
+    margin-top: 75px;
     text-align: center;
+    flex-direction: column;
     width: 50%;
     height: 75vh;
     margin-left: 25%;
-    bottom: 150px;
+    margin-bottom: 150px;
     border-radius: 15px;
     box-shadow: 12px 17px 15px 2px var(--primaire);
     border: 2px solid var(--primaire);
@@ -106,17 +107,10 @@ h1{
         overflow-y: hidden;
     }
     .form {
-        position: absolute;
-        display: block;
-        top: 60px;
-        text-align: center;
+        display: flex;
         width: 90%;
-        height: 80vh;
         margin-left: 5%;
-        bottom: 150px;
-        border-radius: 15px;
-        box-shadow: 12px 17px 15px 2px var(--primaire);
-        border: 2px solid var(--primaire);
+        flex-direction: column;
     }
     .inputTexte textarea {
         height: 50px;
@@ -144,17 +138,11 @@ h1{
         overflow-y: hidden;
     }
     .form {
-        position: absolute;
-        display: block;
-        top: 60px;
-        text-align: center;
+        display: flex;
         width: 90%;
         height: 80vh;
         margin-left: 5%;
-        bottom: 150px;
-        border-radius: 15px;
-        box-shadow: 12px 17px 15px 2px var(--primaire);
-        border: 2px solid var(--primaire);
+        flex-direction: column;
     }
     .inputTexte textarea {
         height: 100px;
@@ -187,17 +175,11 @@ h1{
         overflow-y: hidden;
     }
     .form {
-        position: absolute;
-        display: block;
-        top: 60px;
-        text-align: center;
+        display: flex;
         width: 90%;
         height: 80vh;
         margin-left: 5%;
-        bottom: 150px;
-        border-radius: 15px;
-        box-shadow: 12px 17px 15px 2px var(--primaire);
-        border: 2px solid var(--primaire);
+        flex-direction: column;
     }
     .inputTexte textarea {
         height: 100px;
