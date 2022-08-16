@@ -22,7 +22,7 @@ root.render(
       <Route path='/' element={<Home />} />
       <Route path="/login/*" element={<Login />} />
       <Route path="/Insc" element={<Insc />} />
-      <Route path="/Actu" element={<Actu />} />
+      <Route path="/Actu/:id/:roles" element={<Actu />} />
       <Route path="ActuForm" element={<ActuForm />} />
       <Route path="ModifForm/:id" element={<ModifForm />} />
       </Routes>

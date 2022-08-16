@@ -1,6 +1,6 @@
 import Header from '../components/Header/index'
 import classes from '../styles/ActuForm.module.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
 import axios from 'axios'
 
@@ -34,6 +34,7 @@ function ActuForm() {
     const image = document.querySelector('input[type=file]').files[0]
     const token = localStorage.getItem("token")
     const userId = localStorage.getItem("id")
+    const role = localStorage.getItem("role")
 
 
     const actu = {
@@ -51,12 +52,18 @@ function ActuForm() {
    })
     .then((res) => {
       console.log(res)
-      navigate("/Actu")
+      navigate("/Actu/" + userId + "/" + role)
     })
     .catch((error) => {
       console.log(error)
     })
 
+  }
+
+  const handleClick = (e) => {
+    const userId = localStorage.getItem("id")
+    const role = localStorage.getItem("role")
+    navigate("/Actu/" + userId + "/" + role)
   }
     return(
       <div>
@@ -79,10 +86,8 @@ function ActuForm() {
                 <img src="https://cdn-icons-png.flaticon.com/512/48/48639.png" height={200} alt="" className='imgForm' ref={imgInputRef} />
             </div>
             <div className={classes.bouton}>
-            <button type="submit" onClick={() => {}}>Publier</button>
-            <Link to="/Actu">
-            <button className={classes.boutonRetour}>Retour</button>
-            </Link>
+            <button type="submit">Publier</button>
+            <button className={classes.boutonRetour} onClick={handleClick}>Retour</button>
             </div>
         </form>
         </div>

@@ -29,7 +29,7 @@ function Login() {
             localStorage.setItem("role", role)
             localStorage.setItem("id", userId)
             localStorage.setItem("token", token)
-            navigate("/Actu")
+            navigate("/Actu/" + userId + "/" + role)
         })
         .catch((error) => {
             console.log('Erreur')

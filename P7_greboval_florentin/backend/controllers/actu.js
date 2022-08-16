@@ -37,12 +37,12 @@ exports.modifyActu = (req, res, next) => {
     } : { ...req.body};
     Actu.findOne({_id: req.params.id})
         .then((actu) => {
-            if (actu.userId != req.auth.userId) {
-                res.status(401).json({ message : 'Non authorizé'});
-            } else {
-                Actu.updateOne({ _id: req.params.id}, { ...actuObject, _id: req.params.id})
+            if (actu.userId == req.auth.userId | req.body.role == 1) {
+              Actu.updateOne({ _id: req.params.id}, { ...actuObject})
                 .then(() => res.status(200).json({message : 'Objet modifié!'}))
                 .catch(error => res.status(401).json({ error }));
+            } else {
+              res.status(401).json({ message : 'Non authorizé'});
             }
         })
         .catch((error) => {

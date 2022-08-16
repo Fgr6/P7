@@ -1,6 +1,6 @@
 import Header from '../components/Header/index'
 import classes from '../styles/ActuForm.module.css'
-import { Link, useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import {  useEffect, useState} from 'react'
 import { useRef } from 'react'
@@ -24,6 +24,8 @@ function ModifForm() {
   }
 
   const token = localStorage.getItem("token")
+  const role = localStorage.getItem("role")
+
 
   const idPost = useParams()
 
@@ -65,13 +67,20 @@ function ModifForm() {
       titre: valueTitre,
       message: valueText,
       image: image,
+      role: role,
     }
     axios.put(`http://localhost:5000/api/actu/${idPost.id}`,actu, {headers: { 'Content-type': 'multipart/form-data','Authorization' : 'Bearer ' + token}})
     .then((res) => console.log(res.data))
     .catch((error) => console.log(error.response))
    
-    navigate('/Actu')
+    navigate("/Actu/" + userId + "/" + role)
 
+  }
+
+  const handleClick = (e) => {
+    const userId = localStorage.getItem("id")
+    const role = localStorage.getItem("role")
+    navigate("/Actu/" + userId + "/" + role)
   }
 
   return(
@@ -96,9 +105,7 @@ function ModifForm() {
           </div>
           <div className={classes.bouton}>
           <button type="submit" onClick={handleSubmit}>Publier</button>
-          <Link to="/Actu">
-          <button className={classes.boutonRetour}>Retour</button>
-          </Link>
+          <button className={classes.boutonRetour} onClick={handleClick}>Retour</button>
           </div>
       </form>
       </div>
