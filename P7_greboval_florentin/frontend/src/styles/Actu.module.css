@@ -3,6 +3,10 @@ body{
     --secondaire : #FFD7D7;
     
     --tertiaire : #4E5166;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+
 }
 .actu {
     display: flex;

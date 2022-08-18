@@ -8,11 +8,12 @@ import { useEffect } from 'react'
 function Home() {
 
   const verifId = localStorage.getItem("id")
+  const role = localStorage.getItem("role")
   let navigate = useNavigate()
 
   useEffect(() => {
     if(verifId){
-      navigate("/Actu")
+      navigate("/Actu/" + verifId + "/" + role)
     }
   })
   const texte = "Bienvenue sur l'intranet de Groupomania"
